@@ -34,8 +34,7 @@
         </table>
     </div>
     <script>
-        var segedTomb = [0,0,0,0,0];
-        var locationX = [segedTomb,segedTomb,segedTomb,segedTomb,segedTomb];
+        var locationX = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
 
         var helyX;
         var helyY;
@@ -49,7 +48,7 @@
 
         //újrakezdés
         function ujraKezd(){
-            locationX = [segedTomb,segedTomb,segedTomb,segedTomb,segedTomb];
+            locationX = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
 
             guessCount = 0;
             hit = 0;
@@ -68,7 +67,7 @@
 
         //hajó elhelyezése:
         function hajoElhelyezes(){
-            let vizVagyfugg=(Math.round(Math.random())+1);
+            let vizVagyfugg=(Math.round(Math.random()));
             if (vizVagyfugg==1){
                 helyX=(Math.round(Math.random()*4)+1);
                 helyY=(Math.round(Math.random()*(5-ship1)+1));
