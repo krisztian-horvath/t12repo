@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Vizsga feladat teszt</title>
+</head>
+
+<body>
+    <table id="testTable" class="table table-sm table-striped table-dark table-hover">
+        <thead>
+            <tr>
+                <td>Teszt neve</td>
+                <td>Input adat</td>
+                <td>Elvárt eredmény</td>
+                <td>Végeredmény</td>
+                <td>Sikeresség</td>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        function KockaFelszin(a){
+            return 6*a**2;
+        }
+        function KockaTerfogat(a){
+            return a**3;
+        }
+        function PhErtek(vizsgaltErtek){
+            return vizsgaltErtek<7 ? "savas" : vizsgaltErtek> 7 ? "lugos" : "semleges";
+        }
+        function ElsoNSzamOsszege(szamokMennyisege){
+            let szumma=0;
+            for (let i=1; i<=szamokMennyisege;i++){
+                szumma+=i;
+            }
+            return szumma;
+        }
+        function MaxParos(vizsgaltTomb){
+            let segedTomb=[];
+            for (let i=0; i<vizsgaltTomb.length; i++){
+                if (vizsgaltTomb[i]%2==0){
+                    segedTomb.push(vizsgaltTomb[i]);
+                }
+            }
+            let legnagyobbSzam=segedTomb[0];
+            for (let i=1; i<segedTomb.length; i++){
+                if (segedTomb[i]>legnagyobbSzam){
+                    legnagyobbSzam=segedTomb[i];
+                }
+            }
+            return legnagyobbSzam;
+        }
+        function MaganHangzokSzama(vizsgaltSzoveg){
+            let maganHangzokSzama=0;
+            let maganHangzok=["a", "á", "e", "é", "i", "í", "o", "ó", "ö", "ő", "u", "ú", "ü", "ű"];
+            for (let i=0; i<vizsgaltSzoveg.length;i++){
+                for (let j=0; j<maganHangzok.length; j++){
+                    if (vizsgaltSzoveg[i]==maganHangzok[j] || vizsgaltSzoveg[i]==maganHangzok[j].toUpperCase()){
+                        maganHangzokSzama++;
+                    }
+                }
+            }
+            return maganHangzokSzama;
+        }
+        function  SzovegVisszafele(szoveg){
+            let szovegVisszaTomb=[];
+            let szovegVisszafele;
+            for (let i=szoveg.length; i>=0; i--){
+                szovegVisszaTomb.push(szoveg[i]);
+            }
+            szovegVisszafele=szovegVisszaTomb.join("");
+            return szovegVisszafele;
+        }
+        function  CegAtlagEletkor(vizsgaltObjektumTomb){
+            let szummaEletkor=0;
+            for (let i=0; i<vizsgaltObjektumTomb.length; i++){
+                szummaEletkor+=vizsgaltObjektumTomb[i].kor;
+            }
+            return Math.round(szummaEletkor/vizsgaltObjektumTomb.length);
+        }
+    </script>
+    <script src="tesztFile.js"></script>
+</body>
+
+</html>
