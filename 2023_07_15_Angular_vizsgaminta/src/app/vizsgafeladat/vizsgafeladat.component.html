@@ -1,0 +1,18 @@
+<h3>Angular modul megoldása</h3>
+
+<label for="suly">Add meg a súlyodat kilogrammban:</label>
+<input type="number" class="form-control" [(ngModel)]="sulyErtek" id="suly">
+<label for="magassag">Add meg a magasságod méterben:</label>
+<input type="number" class="form-control" [(ngModel)]="magassagErtek" id="magassag" >
+<button type="button" class="form-control btn btn-success" (click)="EredmenyMentes()">Eredmény mentése</button>
+
+<hr>
+<p>A megadott értékek alapján a testtömegindegy:{{sulyErtek/(magassagErtek*magassagErtek)}}</p>
+
+<ul>
+    <li *ngFor="let eredmeny of eredmenyek">
+        {{eredmeny}}
+    </li>
+</ul>
+
+
